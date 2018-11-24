@@ -65,7 +65,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
 
 class HelloZenIntentHandler(AbstractRequestHandler):
-    """ Python Hello World Alexa Text Request Handler
+    """ Python Hello Zen Alexa Text Request Handler
     Zen of Python:
     Beautiful is better than ugly.
     Explicit is better than implicit.
