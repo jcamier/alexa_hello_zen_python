@@ -1,0 +1,65 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hello zen",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloZenIntent",
+                    "slots": [
+                        {
+                            "name": "zen_number",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "twenty",
+                        "nineteen",
+                        "eightteen",
+                        "seventeen",
+                        "sixteen",
+                        "fifteen",
+                        "fourteen",
+                        "thirteen",
+                        "twelve",
+                        "eleven",
+                        "ten",
+                        "nine",
+                        "eight",
+                        "seven",
+                        "six",
+                        "five",
+                        "four",
+                        "Tell me {zen_number}",
+                        "{zen_number}",
+                        "Tell me zen {zen_number}",
+                        "three",
+                        "two",
+                        "one",
+                        "Hello Python"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
