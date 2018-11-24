@@ -101,6 +101,7 @@ class HelloZenIntentHandler(AbstractRequestHandler):
             speech_text = f"{pep_20_speech_prefix} {pep_20_dict[speech_text_number[0]]}"
         except (TypeError, IndexError):
             speech_text = "There are only 19 zens in Pep 20"
+
         handler_input.response_builder.speak(speech_text).ask(reprompt)
         return handler_input.response_builder.response
 
