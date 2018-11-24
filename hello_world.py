@@ -142,5 +142,3 @@ sb.add_exception_handler(CatchAllExceptionHandler())
 
 handler = sb.lambda_handler()
 
-# cd /Users/jacquescamier/PycharmProjects/alexa/venv/lib/python3.6/site-packages
-# cli zip -r9 ../function.zip .

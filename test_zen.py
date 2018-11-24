@@ -31,3 +31,6 @@ except (TypeError, IndexError):
     speech_text = "There are only 19 zens in Pep 20"
 
 print(speech_text)
+
+# cd /Users/jacquescamier/PycharmProjects/alexa/venv/lib/python3.6/site-packages
+# cli zip -r9 ../function.zip .
