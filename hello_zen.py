@@ -18,6 +18,34 @@ sb = SkillBuilder()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+# Variables
+
+pep_20_dict = {"1": "Beautiful is better than ugly.",
+                   "2": "Explicit is better than implicit.",
+                   "3": "Simple is better than complex.",
+                   "4": "Beautiful is better than ugly.",
+                   "5": "Complex is better than complicated.",
+                   "6": "Sparse is better than dense.",
+                   "7": "Readability counts.",
+                   "8": "Special cases aren't special enough to break the rules.",
+                   "9": "Although practicality beats purity.",
+                   "10": "Errors should never pass silently.",
+                   "11": "Unless explicitly silenced.",
+                   "12": "In the face of ambiguity, refuse the temptation to guess.",
+                   "13": "There should be one-- and preferably only one obvious way to do it.",
+                   "14": "Although that way may not be obvious at first unless you're Dutch.",
+                   "15": "Now is better than never.",
+                   "16": "Although never is often better than right now.",
+                   "17": "If the implementation is hard to explain, it's a bad idea.",
+                   "18": "If the implementation is easy to explain, it may be a good idea.",
+                   "19": "Namespaces are one honking great idea let's do more of those!"
+                   }
+pep_20_speech_prefix = "Hello Zen of Python PEP 20, "
+
+reprompt_speech = "Say Yes to ask another or no to end"
+
+# Classes:
+
 
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
@@ -43,7 +71,6 @@ class HelloZenIntentHandler(AbstractRequestHandler):
     Explicit is better than implicit.
     Simple is better than complex.
     Complex is better than complicated.
-    c
     Sparse is better than dense.
     Readability counts.
     Special cases aren't special enough to break the rules.
@@ -67,24 +94,13 @@ class HelloZenIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         slots = handler_input.request_envelope.request.intent.slots
         zen_number = int(slots["zen_number"].value)
-        if zen_number == 1:
-            speech_text = "Hello Zen of Python PEP 20, Beautiful is better than ugly."
-            reprompt = "Say Yes to ask another or no to end"
-        elif zen_number == 2:
-            speech_text = "Hello Zen of Python PEP 20, Explicit is better than implicit."
-            reprompt = "Say Yes to ask another or no to end"
-        elif zen_number == 3:
-            speech_text = "Hello Zen of Python PEP 20, Simple is better than complex."
-            reprompt = "Say Yes to ask another or no to end"
-        elif zen_number == 4:
-            speech_text = "Hello Zen of Python PEP 20, Complex is better than complicated."
-            reprompt = "Say Yes to ask another or no to end"
-        elif zen_number == 5:
-            speech_text = "Hello Zen of Python PEP 20, Flat is better than nested."
-            reprompt = "Say Yes to ask another or no to end"
-        else:
-            speech_text = "The Zen of Python only has twenty numbers."
-            reprompt = "Say Yes to ask another or no to end"
+        zen_number = str(zen_number)
+        speech_text_number = [zen for zen in pep_20_dict if zen == zen_number]
+        reprompt = reprompt_speech
+        try:
+            speech_text = f"{pep_20_speech_prefix} {pep_20_dict[speech_text_number[0]]}"
+        except (TypeError, IndexError):
+            speech_text = "There are only 19 zens in Pep 20"
         handler_input.response_builder.speak(speech_text).ask(reprompt)
         return handler_input.response_builder.response
 

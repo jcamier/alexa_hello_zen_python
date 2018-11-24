@@ -32,7 +32,9 @@
                         }
                     ],
                     "samples": [
-                        "twenty",
+                        "Tell me {zen_number}",
+                        "{zen_number}",
+                        "Tell me zen {zen_number}",
                         "nineteen",
                         "eightteen",
                         "seventeen",
@@ -49,13 +51,9 @@
                         "six",
                         "five",
                         "four",
-                        "Tell me {zen_number}",
-                        "{zen_number}",
-                        "Tell me zen {zen_number}",
                         "three",
                         "two",
-                        "one",
-                        "Hello Python"
+                        "one"
                     ]
                 }
             ],
